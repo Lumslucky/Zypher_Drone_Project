@@ -1,4 +1,4 @@
-# Zypher_Drone_Project
+# Zypher_Drone_FCU
  Zypher is a fully autonome drone project with self-built hardware and software
 
 This repository is preserved only for the Flight Control Unit (FCU)
