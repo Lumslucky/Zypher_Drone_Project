@@ -31,12 +31,26 @@ The PCB has pretty interesting mechanical constraints:
 
 The reason for these constraints is the promotion at [JLCPCB](https://jlcpcb.com/), as for just 2$, you are able to get a 8 Layer board with the maximum dimensions of 52 mm x 52 mm. (`I love you JLCPCB and sorry for using this for a project like this`).
 
-By requirements the following hardware was needed:
+By requirements the following hardware is needed:
 
 - ESP32-S3-Wroom-1 (Main Control Unit)
-- ... (6-Axis Accelerometer)
-- ... (Magnetometer)
-- ... (GPS Location)
-- ... (Battery Management System)
-- ... (Buck Regulator)
-- ... (USB-C Connector)
+- LSM6DSO32TR (IMU)
+- LIS2MDLTR (Magnetometer)
+- TESEO-LIV3ER (GPS Location)
+- LTC4067 (Battery Management System)
+- TPS62825 (Buck Regulator)
+- USB4105 (USB-C Connector)
+- 2x STSPIN240 (Motor Controllers)
+- FZ2812 (RGB Addr. LED)
+- 4x BLDC
+
+## Embedded Software
+
+The system is supposed to be a safety critical system (Unfortunately without any certifications).
+The requirements for this software are the following:
+
+- Real time (FreeRTOS as it is native on the ESP32)
+- Easily Testable
+- Safety Critical
+- Lightweight **(FAST)**
+- AIO Module (All in one, I want to push to the limits of the ESP32)
